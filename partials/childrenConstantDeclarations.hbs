@@ -1,0 +1,9 @@
+
+{{#childrenInfo.all}}
+  const {{child}}Data = {{names.singularLowercase}}.children && {{names.singularLowercase}}.children.find(child => child.typeId === TYPE_{{childAllCaps}}_ID);
+  {{#if nonProperty}}
+    const {{pluralChild}} = {{child}}Data ? {{child}}Data.instances : [];
+  {{else}}
+    const {{child}} = {{child}}Data ? {{child}}Data.instances[0] : [];
+  {{/if}}
+{{/childrenInfo.all}}

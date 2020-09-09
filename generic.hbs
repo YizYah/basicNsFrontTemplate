@@ -1,0 +1,13 @@
+{{> START_OF_FILE this}}
+{{> IMPORTS_SECTION this}}
+{{> STYLING_SECTION this}}
+{{> BUTTON_SECTION this}}
+{{> FUNCTION_SECTION this}}
+{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
+  export default {{PluralName}};
+{{/if}}
+{{#if (neq boilerPlateInfo.formType formTypes.LIST) }}
+  {{> COMPOSE_CLAUSE this}}
+  {{> PROP_TYPES_SECTION this}}
+{{/if}}
+

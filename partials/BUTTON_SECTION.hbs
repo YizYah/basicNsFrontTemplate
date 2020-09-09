@@ -1,0 +1,26 @@
+{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+  {{> startButton this}}
+  margin-left: 1em;
+  {{> endButton this}}
+{{/if}}
+{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
+  {{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
+    {{> startButton this}}
+    display: block;
+    margin: 0 auto;
+    {{> endButton this}}
+  {{/if}}{{/if}}
+{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+  {{> startButton this}}
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+  color: #bbbbbb;
+  transition: color 0.5s ease;
+  &:hover {
+  color: ${(props) => props.hoverColor || '#000000'};
+  }
+  {{> endButton this}}
+{{/if}}

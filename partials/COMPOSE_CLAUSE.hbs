@@ -1,0 +1,15 @@
+
+
+// ns__start_section {{tempDetails}} compose
+{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+  export default compose(graphql(EXECUTE, { name: 'create{{names.singular}}' }){{> singleChildrenComposeStatements this}})(
+  {{names.singular}}CreationForm
+  );
+{{/if}}
+{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+  export default compose(
+  graphql(EXECUTE, { name: 'updateInstance' }),
+  graphql(EXECUTE, { name: 'deleteInstance' })
+  )({{names.singular}});
+{{/if}}
+// ns__end_section {{tempDetails}} compose

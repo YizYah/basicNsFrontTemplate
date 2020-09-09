@@ -1,0 +1,22 @@
+
+{{~#childrenInfo.all}}
+  {{#if nonProperty}}
+    < {{childComponent}}
+    {{childPlural}} = { {{childPlural}} }
+    {{names.singularLowercase}}Id = { {{names.singularLowercase}}.id }
+    label='{{childSingular}}?'
+    refetchQueries={refetchQueries}
+    />
+  {{else}}
+    < {{childComponent}}
+    {{child}} = { {{child}} }
+    {{names.singularLowercase}}Id = { {{names.singularLowercase}}.id }
+    label='{{childComponent}}?'
+    refetchQueries={refetchQueries}
+    />
+  {{/if}}
+{{/childrenInfo.all~}}
+
+{{~#childrenInfo.connected}}
+  < {{childComponent}} {{names.singularLowercase}}Id = { {{names.singularLowercase}}.id} />
+{{/childrenInfo.connected~}}

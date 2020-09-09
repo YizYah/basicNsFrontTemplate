@@ -1,0 +1,15 @@
+{{#childrenInfo.single}}
+  {{#if property}}
+    await create{{singularChild}}({
+    variables: {
+    actionId: CREATE_{{childAllCaps}}_FOR_{{sourceAllCaps}}_ACTION_ID,
+    executionParameters: JSON.stringify({
+    parentInstanceId: new{{singularParent}}Data.instanceId,
+    value: 'false',
+    }),
+    unrestricted: false,
+    },
+    refetchQueries,
+    });
+  {{/if}}
+{{/childrenInfo.single}}

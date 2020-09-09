@@ -1,0 +1,8 @@
+
+{{~#childrenInfo.all~}}
+import {{childComponent}} from '../{{childComponent}}';
+{{/childrenInfo.all~}}
+
+{{~#childrenInfo.connected~}}
+import {{childComponent}} from '../../{{singularConnected}}/{{childComponent}}';
+{{/childrenInfo.connected~}}
