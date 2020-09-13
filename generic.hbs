@@ -4,7 +4,7 @@
 {{> BUTTON_SECTION this}}
 {{> FUNCTION_SECTION this}}
 {{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
-  export default {{PluralName}};
+  export default {{names.plural}};
 {{/if}}
 {{#if (neq boilerPlateInfo.formType formTypes.LIST) }}
   {{> COMPOSE_CLAUSE this}}

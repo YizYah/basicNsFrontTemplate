@@ -1,0 +1,35 @@
+/*
+  This file was generated automatically by nostack 'makecode' for the app '{{appName}}'.
+  If you build a new stack from a template, this version will probably need to change.
+
+  For instance, it will update if you run 'makecode' again. Fair warning, that will
+  change a lot of your code. If you modify your current stack to add actions, sources,
+  or types, it would make sense to add constants here.
+
+  But, you should *not* add permanent, separate configuration material
+  or other material that is not directly managed by NoStack,
+  because this will will be replaced with every call to 'makecode'.
+*/
+
+// stack id
+export const PLATFORM_ID = '{{stackId}}';
+
+// sources
+{{#sources}}
+    export const {{sourceConst}} = '{{sourceId}}';
+{{/sources~}}
+
+// types
+{{#types}}
+    export const {{typeConst}} = '{{typeId}}';
+{{/types~}}
+
+// actions
+{{#each actionTypes}}
+    // {{actionType}}
+    {{#each actions}}
+        export const {{actionConst}} = '{{actionId}}';
+    {{/each}}
+
+{{/each~}}
+

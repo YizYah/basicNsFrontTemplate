@@ -1,0 +1,5 @@
+dirs:
+  components: src/components
+  queries: src/components/source-props
+  custom: src/custom
+
