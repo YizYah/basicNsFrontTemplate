@@ -1,5 +1,52 @@
+name: react-no-stack-hosted
+version: 1.0
+category: React NoStack
+
 dirs:
   components: src/components
   queries: src/components/source-props
   custom: src/custom
 
+placeholderAppCreation:
+  preCommands:
+    - title: Run create-react-app
+      file: npx
+      arguments:
+        - create-react-app
+        - $appDir
+
+  mainInstallation:
+    - '@apollo/react-common'
+    - '@apollo/react-components@3.1.5'
+    - '@apollo/react-hoc@3.1.5'
+    - '@apollo/react-hooks@3.1.5'
+    - '@shopify/react-compose'
+    - apollo-cache-inmemory
+    - apollo-client
+    - graphql
+    - apollo-link
+    - apollo-fetch
+    - apollo-link-context
+    - apollo-link-http
+    - axios
+    - formik
+    - graphql-tag
+    - jsonwebtoken
+    - react-graph-vis
+    - react-select
+    - react-spinkit
+    - styled-components
+    - react-select
+    - uuid
+    - yup
+    - '@nostack/no-stack@alpha'
+  devInstallation:
+    - prettier
+    - eslint-config-prettier
+    - eslint-plugin-prettier
+    - eslint-config-airbnb
+    - eslint-plugin-react
+    - eslint-plugin-import
+    - husky
+    - lint-staged
+    - pretty-quick

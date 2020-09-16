@@ -1,0 +1,22 @@
+import gql from 'graphql-tag';
+
+export const SOURCE_{{unitAllCaps}}_QUERY = gql`
+query UNIT(
+$id: ID!
+$typeRelationships: String!
+$parameters: String
+) {
+unitData(
+unitId: $id
+typeRelationships: $typeRelationships
+parameters: $parameters
+)
+{
+{{queryBody}}
+}
+}
+`;
+
+export const {{unitAllCaps}}_RELATIONSHIPS = {
+{{typeRelationships}},
+};
