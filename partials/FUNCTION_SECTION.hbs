@@ -43,7 +43,13 @@
   }),
   unrestricted: false,
   },
-  {{refetchQueriesLine}}
+
+  {{#if (eq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
+      {{refetchQueriesLine stackInfo names.source.name names.singularLowercase}}
+  {{/if}}
+  {{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
+      refetchQueries,
+  {{/if}}
   });
 
   {{> singleChildCreationCode this}}
@@ -147,7 +153,7 @@
   const { selected{{names.singular}}Id } = this.state;
   {{#if (eq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
     const parameters = {
-    {{constraintValue}}: {{names.parent}}Id,
+    {{constraintValue stackInfo names.source.name names.singularLowercase}}: {{names.parent}}Id,
     };
   {{/if}}
 
