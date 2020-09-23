@@ -7,6 +7,23 @@ dirs:
   queries: src/components/source-props
   custom: src/custom
 
+unitDataTypes:
+  selectable:
+    components:
+      - list
+      - single
+  constrainable:
+    components: null
+  creatable:
+    components:
+      - creation
+      - list
+      - single
+  useable:
+    components:
+      - list
+      - single
+
 placeholderAppCreation:
   preCommands:
     - title: Run create-react-app
