@@ -1,30 +1,30 @@
 
 
-// ns__custom_start {{tempDetails}} beforeFunction
-// ns__custom_end {{tempDetails}} beforeFunction
+// ns__custom_start {{fileInfo}}, loc: beforeFunction
+// ns__custom_end {{fileInfo}}, loc: beforeFunction
 
-// ns__start_section {{tempDetails}} function
-{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+// ns__start_section {{fileInfo}}, loc: function
+{{#if (eq boilerPlateInfo.componentType 'creation') }}
   function {{names.singular}}CreationForm({
   {{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}parentId{{/if}}{{#if (eq boilerPlateInfo.nodeType nodeTypes.ROOT) }}{{names.parent}}Id{{/if}},
   create{{names.singular}}{{> singleChildrenParams this}},
   refetchQueries,
-  // ns__custom_start {{tempDetails}} addedProps
-  // ns__custom_end {{tempDetails}} addedProps
+  // ns__custom_start {{fileInfo}}, loc: addedProps
+  // ns__custom_end {{fileInfo}}, loc: addedProps
   }) {
   const [ {{names.singularLowercase}}Value, update{{names.singular}}Value ] = useState('');
   const [ loading, updateLoading ] = useState(false);
-  // ns__custom_start {{tempDetails}} beginning
+  // ns__custom_start {{fileInfo}}, loc: beginning
   /* any special declarations etc. */
-  // ns__custom_end {{tempDetails}} beginning
+  // ns__custom_end {{fileInfo}}, loc: beginning
 
-  // ns__start_section {{tempDetails}} handleChange
+  // ns__start_section {{fileInfo}}, loc: handleChange
   function handleChange(e) {
   update{{names.singular}}Value(e.target.value);
   }
-  // ns__end_section {{tempDetails}} handleChange
+  // ns__end_section {{fileInfo}}, loc: handleChange
 
-  // ns__start_section {{tempDetails}} handleSubmit
+  // ns__start_section {{fileInfo}}, loc: handleSubmit
   async function handleSubmit(e) {
   e.preventDefault();
 
@@ -57,21 +57,21 @@
   update{{names.singular}}Value('');
   updateLoading(false);
   }
-  // ns__end_section {{tempDetails}} handleSubmit
+  // ns__end_section {{fileInfo}}, loc: handleSubmit
 
-  // ns__start_section {{tempDetails}} handleKeyPress
+  // ns__start_section {{fileInfo}}, loc: handleKeyPress
   function handleKeyPress(e) {
   if (e.charCode === 13) {
   handleSubmit(e);
   }
   }
-  // ns__end_section {{tempDetails}} handleKeyPress
+  // ns__end_section {{fileInfo}}, loc: handleKeyPress
 
 
-  // ns__custom_start {{tempDetails}} beforeReturn
-  // ns__custom_end {{tempDetails}} beforeReturn
+  // ns__custom_start {{fileInfo}}, loc: beforeReturn
+  // ns__custom_end {{fileInfo}}, loc: beforeReturn
 
-  // ns__start_section {{tempDetails}} return
+  // ns__start_section {{fileInfo}}, loc: return
   return (
   < Form>
   <label htmlFor='{{names.singularLowercase}}-value'>
@@ -90,41 +90,41 @@
   </Button>
   </Form>
   );
-  // ns__end_section {{tempDetails}} return
+  // ns__end_section {{fileInfo}}, loc: return
 
   }
 
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
+{{#if (eq boilerPlateInfo.componentType 'list') }}
   class {{names.component}} extends Component {
-  // ns__custom_start {{tempDetails}} beginning
+  // ns__custom_start {{fileInfo}}, loc: beginning
   /* any special declarations etc. */
-  // ns__custom_end {{tempDetails}} beginning
+  // ns__custom_end {{fileInfo}}, loc: beginning
   state = {
   selected{{names.singular}}Id: null,
-  // ns__custom_start {{tempDetails}} addedState
-  // ns__custom_end {{tempDetails}} addedState
+  // ns__custom_start {{fileInfo}}, loc: addedState
+  // ns__custom_end {{fileInfo}}, loc: addedState
   };
 
   wrapperRef = createRef();
 
-  // ns__start_section {{tempDetails}} didMount
+  // ns__start_section {{fileInfo}}, loc: didMount
   componentDidMount() {
-  // ns__custom_start {{tempDetails}} componentDidMount
-  // ns__custom_end {{tempDetails}} componentDidMount
+  // ns__custom_start {{fileInfo}}, loc: componentDidMount
+  // ns__custom_end {{fileInfo}}, loc: componentDidMount
   document.addEventListener('mousedown', this.handleClick);
   }
-  // ns__end_section {{tempDetails}} didMount
+  // ns__end_section {{fileInfo}}, loc: didMount
 
-  // ns__start_section {{tempDetails}} willMount
+  // ns__start_section {{fileInfo}}, loc: willMount
   componentWillUnmount() {
-  // ns__custom_start {{tempDetails}} componentWillUnmount
-  // ns__custom_end {{tempDetails}} componentWillUnmount
+  // ns__custom_start {{fileInfo}}, loc: componentWillUnmount
+  // ns__custom_end {{fileInfo}}, loc: componentWillUnmount
   document.removeEventListener('mousedown', this.handleClick);
   }
-  // ns__end_section {{tempDetails}} willMount
+  // ns__end_section {{fileInfo}}, loc: willMount
 
-  // ns__start_section {{tempDetails}} handleClick
+  // ns__start_section {{fileInfo}}, loc: handleClick
   handleClick = (e) => {
   const node = this.wrapperRef.current;
 
@@ -132,16 +132,16 @@
   this.setState({ selected{{names.singular}}Id: null });
   }
   };
-  // ns__end_section {{tempDetails}} handleClick
+  // ns__end_section {{fileInfo}}, loc: handleClick
 
-  // ns__start_section {{tempDetails}} handleSelect
+  // ns__start_section {{fileInfo}}, loc: handleSelect
   handleSelect = (id) => this.setState({ selected{{names.singular}}Id: id });
-  // ns__end_section {{tempDetails}} handleSelect
+  // ns__end_section {{fileInfo}}, loc: handleSelect
 
-  // ns__custom_start {{tempDetails}} beforeRender
-  // ns__custom_end {{tempDetails}} beforeRender
+  // ns__custom_start {{fileInfo}}, loc: beforeRender
+  // ns__custom_end {{fileInfo}}, loc: beforeRender
 
-  // ns__start_section {{tempDetails}} render
+  // ns__start_section {{fileInfo}}, loc: render
   render() {
   {{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
     const { {{names.parent}}Id, {{names.pluralLowercase}}, refetchQueries, onUpdate } = this.props;
@@ -157,10 +157,10 @@
     };
   {{/if}}
 
-  // ns__custom_start {{tempDetails}} renderBeginning
-  // ns__custom_end {{tempDetails}} renderBeginning
+  // ns__custom_start {{fileInfo}}, loc: renderBeginning
+  // ns__custom_end {{fileInfo}}, loc: renderBeginning
 
-  // ns__start_section {{tempDetails}} renderReturn
+  // ns__start_section {{fileInfo}}, loc: renderReturn
   return (
   {{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
     <{{names.component}}StyleWrapper
@@ -170,11 +170,11 @@
       <{{names.singular}}CreationForm
               parentId={ {{names.parent}}Id }
               refetchQueries={refetchQueries}
-      // ns__custom_start {{tempDetails}} addedPropsForCreationForm
-      // ns__custom_end {{tempDetails}} addedPropsForCreationForm
+      // ns__custom_start {{fileInfo}}, loc: addedPropsForCreationForm
+      // ns__custom_end {{fileInfo}}, loc: addedPropsForCreationForm
       />
 
-      {/* ns__start_section {{tempDetails}} listElements */}
+      {/* ns__start_section {{fileInfo}}, loc: listElements */}
       { {{names.pluralLowercase}}.map(({{names.singularLowercase}}) => (
       <{{names.singular}}
       key={v4()}
@@ -184,14 +184,14 @@
       parentId={ {{names.parent}}Id }
       refetchQueries={refetchQueries}
       onSelect={this.handleSelect}
-      // ns__custom_start {{tempDetails}} addedPropsForChildren
-      // ns__custom_end {{tempDetails}} addedPropsForChildren
+      // ns__custom_start {{fileInfo}}, loc: addedPropsForChildren
+      // ns__custom_end {{fileInfo}}, loc: addedPropsForChildren
       />
       )) }
-      {/* ns__end_section {{tempDetails}} listElements */}
+      {/* ns__end_section {{fileInfo}}, loc: listElements */}
 
-      {/* ns__custom_start {{tempDetails}} renderEnding */}
-      {/* ns__custom_end {{tempDetails}} renderEnding */}
+      {/* ns__custom_start {{fileInfo}}, loc: renderEnding */}
+      {/* ns__custom_end {{fileInfo}}, loc: renderEnding */}
     </{{names.component}}StyleWrapper>
   {{/if}}
   {{#if (eq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
@@ -211,15 +211,15 @@
 
       const {{names.pluralLowercase}} = data.unitData.map((el) => flattenData(el));
 
-      // ns__custom_start {{tempDetails}} beforeReturn
-      // ns__custom_end {{tempDetails}} beforeReturn
+      // ns__custom_start {{fileInfo}}, loc: beforeReturn
+      // ns__custom_end {{fileInfo}}, loc: beforeReturn
       return (
       <>
       <{{names.singular}}CreationForm
                 {{names.parent}}Id={ {{names.parent}}Id }
                 refetchQueries={refetchQueries}
-      // ns__custom_start {{tempDetails}} addedPropsForCreationForm
-      // ns__custom_end {{tempDetails}} addedPropsForCreationForm
+      // ns__custom_start {{fileInfo}}, loc: addedPropsForCreationForm
+      // ns__custom_end {{fileInfo}}, loc: addedPropsForCreationForm
       />
       <{{names.plural}}StyleWrapper
               ref={this.wrapperRef}
@@ -234,25 +234,25 @@
         selected={ {{names.singularLowercase}}.id === selected{{names.singular}}Id }
         refetchQueries={refetchQueries}
         onSelect={this.handleSelect}
-        // ns__custom_start {{tempDetails}} addedPropsForChildren
-        // ns__custom_end {{tempDetails}} addedPropsForChildren
+        // ns__custom_start {{fileInfo}}, loc: addedPropsForChildren
+        // ns__custom_end {{fileInfo}}, loc: addedPropsForChildren
         />
         )) }
       </{{names.plural}}StyleWrapper>
-      {/* ns__custom_start {{tempDetails}} renderEnding */}
-      {/* ns__custom_end {{tempDetails}} renderEnding */}
+      {/* ns__custom_start {{fileInfo}}, loc: renderEnding */}
+      {/* ns__custom_end {{fileInfo}}, loc: renderEnding */}
     </>
     );
     }}
     </Unit>
   {{/if}}
   );
-  // ns__end_section {{tempDetails}} renderReturn
+  // ns__end_section {{fileInfo}}, loc: renderReturn
   }
-  // ns__end_section {{tempDetails}} render
+  // ns__end_section {{fileInfo}}, loc: render
   }
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+{{#if (eq boilerPlateInfo.componentType 'single') }}
   function {{names.component}}({
   {{names.singularLowercase}},
   parentId,
@@ -261,23 +261,23 @@
   deleteInstance,
   refetchQueries,
   onSelect,
-  // ns__custom_start {{tempDetails}} addedProps
-  // ns__custom_end {{tempDetails}} addedProps
+  // ns__custom_start {{fileInfo}}, loc: addedProps
+  // ns__custom_end {{fileInfo}}, loc: addedProps
   }) {
   const [{{names.singularLowercase}}Value, update{{names.component}}Value] = useState({{names.singularLowercase}}.value);
   const [isEditMode, updateIsEditMode] = useState(false);
   const [isSaving, updateIsSaving] = useState(false);
   const [isDeleteMode, updateIsDeleteMode] = useState(false);
   const [isDeleting, updateIsDeleting] = useState(false);
-  // ns__custom_start {{tempDetails}} beginning
-  // ns__custom_end {{tempDetails}} beginning
+  // ns__custom_start {{fileInfo}}, loc: beginning
+  // ns__custom_end {{fileInfo}}, loc: beginning
 
   {{> childrenConstantDeclarations this}}
 
-  // ns__custom_start {{tempDetails}} beforeReturn
-  // ns__custom_end {{tempDetails}} beforeReturn
+  // ns__custom_start {{fileInfo}}, loc: beforeReturn
+  // ns__custom_end {{fileInfo}}, loc: beforeReturn
 
-  // ns__start_section {{tempDetails}} notSelected
+  // ns__start_section {{fileInfo}}, loc: notSelected
   if (!selected) {
   return (
   <{{names.component}}StyleWrapper onClick={() => onSelect({{names.singularLowercase}}.id)}>
@@ -285,15 +285,15 @@
   </{{names.component}}StyleWrapper>
   );
   }
-  // ns__end_section {{tempDetails}} notSelected
+  // ns__end_section {{fileInfo}}, loc: notSelected
 
-  // ns__start_section {{tempDetails}} change
+  // ns__start_section {{fileInfo}}, loc: change
   function handle{{names.component}}ValueChange(e) {
   update{{names.component}}Value(e.target.value);
   }
-  // ns__end_section {{tempDetails}} change
+  // ns__end_section {{fileInfo}}, loc: change
 
-  // ns__start_section {{tempDetails}} save
+  // ns__start_section {{fileInfo}}, loc: save
   async function handle{{names.component}}ValueSave() {
   updateIsSaving(true);
 
@@ -311,15 +311,15 @@
   updateIsEditMode(false);
   updateIsSaving(false);
   }
-  // ns__end_section {{tempDetails}} save
+  // ns__end_section {{fileInfo}}, loc: save
 
-  // ns__start_section {{tempDetails}} cancel
+  // ns__start_section {{fileInfo}}, loc: cancel
   function handleCancelEdit() {
   updateIsEditMode(false);
   }
-  // ns__end_section {{tempDetails}} cancel
+  // ns__end_section {{fileInfo}}, loc: cancel
 
-  // ns__start_section {{tempDetails}} isEdit
+  // ns__start_section {{fileInfo}}, loc: isEdit
   if (isEditMode) {
   return (
   <{{names.component}}StyleWrapper>
@@ -335,9 +335,9 @@
   </{{names.component}}StyleWrapper>
   );
   }
-  // ns__end_section {{tempDetails}} isEdit
+  // ns__end_section {{fileInfo}}, loc: isEdit
 
-  // ns__start_section {{tempDetails}} delete
+  // ns__start_section {{fileInfo}}, loc: delete
   async function handleDelete() {
   updateIsDeleting(true);
 
@@ -356,15 +356,15 @@
   updateIsDeleting(false);
   }
   }
-  // ns__end_section {{tempDetails}} delete
+  // ns__end_section {{fileInfo}}, loc: delete
 
-  // ns__start_section {{tempDetails}} cancelDelete
+  // ns__start_section {{fileInfo}}, loc: cancelDelete
   function handleCancelDelete() {
   updateIsDeleteMode(false);
   }
-  // ns__end_section {{tempDetails}} cancelDelete
+  // ns__end_section {{fileInfo}}, loc: cancelDelete
 
-  // ns__start_section {{tempDetails}} isDelete
+  // ns__start_section {{fileInfo}}, loc: isDelete
   if (isDeleteMode) {
   return (
   <{{names.component}}StyleWrapper selected={selected} isDeleting={isDeleting}>
@@ -377,12 +377,12 @@
   </{{names.component}}StyleWrapper>
   );
   }
-  // ns__end_section {{tempDetails}} isDelete
+  // ns__end_section {{fileInfo}}, loc: isDelete
 
-  // ns__start_section {{tempDetails}} functionReturn
+  // ns__start_section {{fileInfo}}, loc: functionReturn
   return (
   <{{names.component}}StyleWrapper selected={selected}>
-    {/* ns__start_section {{tempDetails}} instanceValue */}
+    {/* ns__start_section {{fileInfo}}, loc: instanceValue */}
     { {{names.singularLowercase}}Value }
     <Button type='button'   onClick={() => updateIsEditMode(true)}>
     &#9998;
@@ -390,19 +390,19 @@
     <Button type='button'   onClick={() => updateIsDeleteMode(true)}>
     &#128465;
     </Button>
-    {/* ns__end_section {{tempDetails}} instanceValue */}
+    {/* ns__end_section {{fileInfo}}, loc: instanceValue */}
 
-    {/* ns__start_section {{tempDetails}} childrenList */}
+    {/* ns__start_section {{fileInfo}}, loc: childrenList */}
     {{> childrenBodyList this}}
-    {/* ns__end_section {{tempDetails}} childrenList */}
+    {/* ns__end_section {{fileInfo}}, loc: childrenList */}
 
-    {/* ns__custom_start {{tempDetails}} renderEnding */}
-    {/* ns__custom_end {{tempDetails}} renderEnding */}
+    {/* ns__custom_start {{fileInfo}}, loc: renderEnding */}
+    {/* ns__custom_end {{fileInfo}}, loc: renderEnding */}
 
   </{{names.component}}StyleWrapper>
   );
-  // ns__end_section {{tempDetails}} functionReturn
+  // ns__end_section {{fileInfo}}, loc: functionReturn
   }
 
 {{/if}}
-// ns__end_section {{tempDetails}} function
+// ns__end_section {{fileInfo}}, loc: function

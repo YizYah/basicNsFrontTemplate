@@ -1,15 +1,15 @@
 
 
-// ns__start_section {{tempDetails}} compose
-{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+// ns__start_section {{fileInfo}}, loc: compose
+{{#if (eq boilerPlateInfo.componentType 'creation') }}
   export default compose(graphql(EXECUTE, { name: 'create{{names.singular}}' }){{> singleChildrenComposeStatements this}})(
   {{names.singular}}CreationForm
   );
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+{{#if (eq boilerPlateInfo.componentType 'single') }}
   export default compose(
   graphql(EXECUTE, { name: 'updateInstance' }),
   graphql(EXECUTE, { name: 'deleteInstance' })
   )({{names.singular}});
 {{/if}}
-// ns__end_section {{tempDetails}} compose
+// ns__end_section {{fileInfo}}, loc: compose

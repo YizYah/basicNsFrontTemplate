@@ -1,16 +1,16 @@
-{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+{{#if (eq boilerPlateInfo.componentType 'creation') }}
   {{> startButton this}}
   margin-left: 1em;
   {{> endButton this}}
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
+{{#if (eq boilerPlateInfo.componentType 'list') }}
   {{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
     {{> startButton this}}
     display: block;
     margin: 0 auto;
     {{> endButton this}}
   {{/if}}{{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+{{#if (eq boilerPlateInfo.componentType 'single') }}
   {{> startButton this}}
   background: none;
   border: none;

@@ -1,6 +1,6 @@
 
 // ns__start_section imports
-{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+{{#if (eq boilerPlateInfo.componentType 'creation') }}
   import React, { useState } from 'react';
   import { graphql } from '@apollo/react-hoc';
   import styled from 'styled-components';
@@ -11,7 +11,7 @@
 
   import { CREATE_{{names.source.typeSpecifier}}_ACTION_ID{{> actionIdsForSingleChildren this}}{{> typeIdsForSingleChildren this}} } from '../../../config';
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
+{{#if (eq boilerPlateInfo.componentType 'list') }}
   import React, { Component, createRef } from 'react';
   {{#if (eq boilerPlateInfo.nodeType nodeTypes.ROOT) }}
     import { Unit } from '@nostack/no-stack';
@@ -33,7 +33,7 @@
     } from '../../source-props/{{names.source.name}}';
   {{/if}}
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+{{#if (eq boilerPlateInfo.componentType 'single') }}
   import React, { useState } from 'react';
   import styled from 'styled-components';
   import { EXECUTE } from '@nostack/no-stack';
@@ -51,8 +51,8 @@
 
   {{> childrenImportList this}}
 {{/if}}
-// ns__custom_start {{tempDetails}} addedImports
+// ns__custom_start {{fileInfo}}, loc: addedImports
 // <!-- prettier-ignore-start -->
 // <!-- prettier-ignore-end -->
-// ns__custom_end {{tempDetails}} addedImports
+// ns__custom_end {{fileInfo}}, loc: addedImports
 // ns__end_section imports

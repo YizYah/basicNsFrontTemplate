@@ -1,6 +1,6 @@
 
-// ns__start_section {{tempDetails}} stylingSection
-{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+// ns__start_section {{fileInfo}}, loc: stylingSection
+{{#if (eq boilerPlateInfo.componentType 'creation') }}
   const Form = styled.div`
   {{> startCustomStyling this}}
   margin: 2em;
@@ -11,14 +11,14 @@
   {{> endCustomStyling this}}
   `;
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
-  {{#if (neq boilerPlateInfo.formType nodeTypes.ROOT) }}
+{{#if (eq boilerPlateInfo.componentType 'list') }}
+  {{#if (neq boilerPlateInfo.componentType nodeTypes.ROOT) }}
     const {{names.plural}}StyleWrapper = styled.div`
     {{> startCustomStyling this}}
     {{> endCustomStyling this}}
     `;
   {{/if}}
-  {{#if (eq boilerPlateInfo.formType nodeTypes.ROOT) }}
+  {{#if (eq boilerPlateInfo.componentType nodeTypes.ROOT) }}
     const {{names.plural}}StyleWrapper = styled.div`
     {{> startCustomStyling this}}
     display: flex;
@@ -29,7 +29,7 @@
   {{/if}}
 
 {{/if}}
-{{#if (and (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) (eq boilerPlateInfo.dataType dataTypes.STRING)) }}
+{{#if (and (eq boilerPlateInfo.componentType 'single') (eq boilerPlateInfo.dataType dataTypes.STRING)) }}
   const {{names.singular}}StyleWrapper = styled.div(
   ({ selected, isDeleting }) => `
   {{> startCustomStyling this}}
@@ -48,7 +48,7 @@
   `
   );
 {{/if}}
-{{#if (and (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) (eq boilerPlateInfo.dataType dataTypes.BOOLEAN)) }}
+{{#if (and (eq boilerPlateInfo.componentType 'single') (eq boilerPlateInfo.dataType dataTypes.BOOLEAN)) }}
   const {{names.singular}}StyleWrapper = styled.span`
   {{> startCustomStyling this}}
   margin-left: 1.5em;
@@ -58,4 +58,4 @@
   {{> endCustomStyling this}}
   `;
 {{/if}}
-// ns__end_section {{tempDetails}} stylingSection
+// ns__end_section {{fileInfo}}, loc: stylingSection

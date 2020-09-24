@@ -7,19 +7,35 @@ dirs:
   queries: src/components/source-props
   custom: src/custom
 
-unitDataTypes:
+componentTypes:
+  creation:
+    suffix: CreationForm
+    singular: true
+  list:
+    singular: false
+  single:
+    singular: true
+
+dataFunctionTypes:
   selectable:
     components:
       - list
       - single
-  constrainable:
+    requiresSource: true
+    nodeType: selectable
+  constrain:
     components: null
-  creatable:
+  create:
     components:
-      - creation
       - list
       - single
-  useable:
+      - creation
+  use:
+    components:
+      - list
+      - single
+    requiresSource: true
+  property:
     components:
       - list
       - single

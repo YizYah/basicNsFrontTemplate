@@ -1,13 +1,13 @@
-// ns__start_section {{tempDetails}} propTypes
+// ns__start_section {{fileInfo}}, loc: propTypes
 {{names.component}}.propTypes = {
-{{#if (eq boilerPlateInfo.formType formTypes.CREATION) }}
+{{#if (eq boilerPlateInfo.componentType 'creation') }}
   parentId: PropTypes.string,
   refetchQueries: PropTypes.array,
   create{{#if (neq boilerPlateInfo.nodeType nodeTypes.ROOT) }}{{names.singular}}{{/if}}: PropTypes.func,
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.LIST) }}
+{{#if (eq boilerPlateInfo.componentType 'list') }}
 {{/if}}
-{{#if (eq boilerPlateInfo.formType formTypes.SINGLE_INSTANCE) }}
+{{#if (eq boilerPlateInfo.componentType 'single') }}
   parentId: PropTypes.string,
   selected: PropTypes.bool,
   updateInstance: PropTypes.func,
@@ -21,7 +21,7 @@
   id: PropTypes.string,
   }),
 {{/if}}
-// ns__custom_start {{tempDetails}} addedPropTypes
-// ns__custom_end {{tempDetails}} addedPropTypes
+// ns__custom_start {{fileInfo}}, loc: addedPropTypes
+// ns__custom_end {{fileInfo}}, loc: addedPropTypes
 };
-// ns__end_section {{tempDetails}} propTypes
+// ns__end_section {{fileInfo}}, loc: propTypes
