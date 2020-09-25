@@ -1,0 +1,9 @@
+userClasses:
+  user: {}
+
+units:
+  list:
+    userClass: user
+    hierarchy:
+      - constrain#user:
+        - create#item
