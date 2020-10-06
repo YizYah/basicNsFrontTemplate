@@ -10,7 +10,7 @@ import NavBar from './components/NavBar';
 import AuthTabs from './components/AuthTabs';
 import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/RegistrationForm';
-import {{topComponentName}} from './components/{{topUnit}}/{{topComponentName}}';
+{{highestComponentsImports appInfo}}
 
 const Wrapper = styled.div`
   padding: 5em 5em;
@@ -51,7 +51,7 @@ const App = () => (
           }
 
           return (
-            <{{topComponentName}} {{{topComponentPropSetting}}} />
+            {{highestComponents appInfo}}
           );
         }}
       </NoStackConsumer>

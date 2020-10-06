@@ -1,4 +1,19 @@
-interface BackendIdList {
+
+interface TypeHierarchy {
+  [key: string]: string | TypeHierarchy | null;
+}
+
+export interface UnitDiscription {
+  userClass?: string;
+  slug?: string;
+  hierarchy: TypeHierarchy;
+}
+
+export interface Units {
+  [key: string]: UnitDiscription;
+}
+
+export interface BackendIdList {
   [key: string]: string;
 }
 
@@ -24,6 +39,54 @@ interface BackendQueryData {
 
 interface BackendQueriesData {
   [type: string]: BackendQueryData;
+}
+
+interface BackendData {
+  ids: BackendIds;
+  queries?: BackendQueriesData;
+  info: object;
+}
+
+interface AppTemplateInfo {
+  name: string;
+  version: string;
+  dir: string;
+}
+
+export interface AppJoinInfo {
+  to: string;
+  from: string;
+}
+
+export interface JoinsData {
+  [name: string]: AppJoinInfo;
+}
+//
+// export interface Inputs {
+//   [nameList: string]: string[];
+// }
+
+export interface AppInfo {
+  appName: string;
+  template: AppTemplateInfo;
+  userClass: string;
+  units: Units;
+  topUnits: string[];
+  inputs?: object;
+  backend?: BackendData;
+  joins?: JoinsData;
+}
+
+export interface BackendIds {
+  stack?: string;
+  units: BackendIdList;
+  types: BackendIdList;
+  actions?: ActionIdList;
+}
+
+interface BackendQueryData {
+  body: string;
+  relationships?: string;
 }
 
 interface BackendData {

@@ -1,9 +1,12 @@
-userClasses:
-  user: {}
+userClass: user
 
 units:
   list:
     userClass: user
     hierarchy:
       - constrain#user:
-        - create#item
+          - create#item
+
+inputs:
+  highestComponents:
+    - list

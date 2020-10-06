@@ -1,0 +1,95 @@
+
+// ns__custom_start {{fileInfo}}, loc: beforeFunction
+// ns__custom_end {{fileInfo}}, loc: beforeFunction
+
+// ns__start_section {{fileInfo}}, loc: function
+function {{names.singular}}Modal({
+    title,
+    content,
+    buttonLabel,
+    open,
+    handleButton,
+    handleBack,
+    buttonBack,
+    handleClose
+    // ns__custom_start {{fileInfo}}, loc: addedProps
+    // ns__custom_end {{fileInfo}}, loc: addedProps
+
+}) {
+// ns__start_section {{fileInfo}}, loc: constants
+const styles = useStyles();
+// ns__end_section {{fileInfo}}, loc: constants
+
+// ns__custom_start {{fileInfo}}, loc: beforeReturn
+/* any special declarations etc. */
+// ns__custom_end {{fileInfo}}, loc: beforeReturn
+return (
+
+<Dialog
+    // ns__start_section {{fileInfo}}, loc: dialogProps
+    open={open}
+    onClose={handleClose}
+    maxWidth='sm'
+    classes=\{{ paper: styles.customDialog }}
+    aria-labelledby='form-dialog-title'
+   // ns__end_section {{fileInfo}}, loc: dialogProps
+>
+// ns__start_section {{fileInfo}}, loc: title
+    <CustomTitle className='modal'>
+
+        <CustomWrap>{title}</CustomWrap>
+    </CustomTitle>
+// ns__end_section {{fileInfo}}, loc: title
+
+// ns__start_section {{fileInfo}}, loc: content
+    <DialogContent>
+        <DialogContentText className='context-text'>
+            {content}
+        </DialogContentText>
+        <DialogContentText>
+
+            <ModalAccordion />
+
+
+        </DialogContentText>
+    </DialogContent>
+// ns__end_section {{fileInfo}}, loc: content
+
+// ns__start_section {{fileInfo}}, loc: actions
+    <DialogActions className='button-wrapper mobile-ver'>
+
+        // ns__start_section {{fileInfo}}, loc: backButton
+        <Button
+                className='button-back  '
+                onClick={handleBack}
+                variant='outlined'
+        >
+            {' '}
+            {buttonBack}{' '}
+        </Button>
+        // ns__end_section {{fileInfo}}, loc: backButton
+
+        // ns__start_section {{fileInfo}}, loc: nextButton
+        <Button
+                className='button-next  '
+                onClick={handleButton}
+                variant='contained'
+        >
+            {' '}
+            {buttonLabel}{' '}
+        </Button>
+        // ns__end_section {{fileInfo}}, loc: nextButton
+
+        // ns__custom_start {{fileInfo}}, loc: otherActions
+        /* any special declarations etc. */
+        // ns__custom_end {{fileInfo}}, loc: otherActions
+
+    </DialogActions>
+
+// ns__custom_start {{fileInfo}}, loc: endOfDialog
+// ns__custom_end {{fileInfo}}, loc: endOfDialog
+</Dialog>
+// ns__end_section {{fileInfo}}, loc: actions
+  );
+}
+// ns__end_section {{fileInfo}}, loc: function

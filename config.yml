@@ -2,10 +2,18 @@ name: react-no-stack-hosted
 version: 1.1
 category: React NoStack
 
+format:
+  codeFileFilter: '.{js,jsx}'
+
 dirs:
   components: src/components
   queries: src/components/source-props
   custom: src/custom
+  static: src/static
+
+static:
+  modal:
+    suffix: 'Modal.js'
 
 componentTypes:
   creation:
