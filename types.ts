@@ -6,6 +6,7 @@ interface TypeHierarchy {
 export interface UnitDiscription {
   userClass?: string;
   slug?: string;
+  highestComponent?: string;
   hierarchy: TypeHierarchy;
 }
 

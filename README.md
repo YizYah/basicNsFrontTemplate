@@ -1,6 +1,6 @@
 NS Basic Template
 -----------------
-This is a template intended for usage with the [ns-front CLI](https://www.npmjs.com/package/ns-front).
+This is a template intended for usage with the [ns-flip CLI](https://www.npmjs.com/package/ns-flip).
 
 This template allows you to create a full-stack app React app easily using the [NoStack](www.nostack.net) framework for the backend.
 
@@ -12,19 +12,28 @@ On the debit side, this template doesn't reuse code very well.  But it has a lot
 
 To use it:
 1. clone to your local.  Move to the parent directory where you want the template to be located and type: `git clone git@github.com:YizYah/basicNsFrontTemplate.git`.
-2. install ns-front globally: `npm i ns-front`
-3. Go to the website for [NoStack](www.nostack.net) and get a free trial license.
-4. Follow the instructions at [ns-front CLI](https://www.npmjs.com/package/ns-front) for creating the app using the template.
+2. install ns-flip globally: `npm i ns-flip`
+3. Contact [NoStack](www.nostack.net) for a free trial licence by emailing info atsign nostack dot net.
+4. Follow the instructions at [ns-flip CLI](https://www.npmjs.com/package/ns-flip) for creating the app using the template.
 5. copy over `sample.app.yml` into your `meta` directory as `app.yml`.  It's just for a simple todo list.  You can then modify it to create whatever you want.
 
 # Required `inputs`
-Make sure that your `app.yml` contains in `inputs` at least one unitName for the the `highestComponents` array, e.g.:
+Make sure that your `app.yml` contains in `inputs` at least one unitName for the the `highestUnits` array, e.g. in `sample.app.yml`:
 ```
 inputs:
-  highestComponents:
-    - appSpec
+  highestUnits:
+    - list
 ```
 That unit (or those units) will get inserted into your generated `App.js` file.
+
+Also, you have to give each of the highest units a `highestComponent` and a `slug`.  E.g. in `sample.app.yml`:
+```
+  list:
+    ...
+    slug: List
+    highestComponent: Item
+    ...
+```
 
 #Data Type Categories
 The following categories are supported:

@@ -1,0 +1,39 @@
+userClass: user
+appName: MyApp
+
+template:
+  dir: /home/yisroel/projects/nsBasicTemplate
+  name: react-no-stack-hosted
+  version: 1.1
+
+units:
+  list:
+    userClass: user
+    slug: List
+    highestComponent: Item
+    hierarchy:
+      constrain#user:
+        create#item: null
+
+inputs:
+  highestUnits:
+    - list
+
+backend:
+  ids:
+    stack: <your NoStack Stack Id>
+    units:
+      list: <list Id>
+    types:
+      user: <user Id>
+      item: <item Id>
+    actions:
+      list:
+        item:
+          create: <create item id>
+          update: <update item id>
+          delete: <delete item id>
+  queries:
+    list:
+      body: ''
+      relationships: ''

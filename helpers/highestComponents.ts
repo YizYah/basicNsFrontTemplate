@@ -5,15 +5,15 @@ export function highestComponents (appInfo: AppInfo) {
   const {userClass} = appInfo
   const {inputs} = appInfo
 
-  if (!inputs || !inputs['highestComponents']) return
-  const componentList = inputs['highestComponents']
+  if (!inputs || !inputs['highestUnits']) return
+  const componentList = inputs['highestUnits']
 
   let highestComponentSection = ''
   componentList.map(componentName => {
     const unitInfo = appInfo.units[componentName]
-    const {slug} = unitInfo
+    const {highestComponent} = unitInfo
     highestComponentSection += `
-          < ${slug} ${userClass}Id={ currentUser.id } />`
+          < ${highestComponent} ${userClass}Id={ currentUser.id } />`
   })
 
   return new Handlebars.SafeString(highestComponentSection)
