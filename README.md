@@ -35,7 +35,7 @@ Also, you have to give each of the highest units a `highestComponent` and a `slu
     ...
 ```
 
-#Data Type Categories
+# Data Type Categories
 The following categories are supported:
 * `create`: lets the user class for a unit create instances of the data type in question.  Shows a list of the instances for a given parent, with a form to create a new one.
 * `constrain`: included in the unit just to limit the data results--doesn't actually show up as a component, but limits the query results for the shown types.
