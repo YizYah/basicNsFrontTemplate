@@ -3,7 +3,7 @@ version: 1.1
 category: React NoStack
 
 format:
-  codeFileFilter: '.{js,jsx,md}'
+  customFileFilter: '.{js,jsx,md}'
 
 dirs:
   components: src/components
