@@ -1,5 +1,5 @@
 userClass: user
-appName: MyApp
+codeName: MyApp
 
 template:
   dir: /home/yisroel/projects/nsBasicTemplate
