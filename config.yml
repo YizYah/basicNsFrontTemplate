@@ -3,7 +3,7 @@ version: 1.1
 category: React NoStack
 
 format:
-  customFileFilter: '.{js,jsx,md}'
+  customFileFilter: '*.{js,jsx,md}'
 
 dirs:
   components: src/components
@@ -13,7 +13,7 @@ dirs:
 
 static:
   modal:
-    suffix: 'Modal.js'
+    suffix: '.js'
 
 componentTypes:
   creation:

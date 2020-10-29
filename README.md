@@ -13,7 +13,7 @@ On the debit side, this template doesn't reuse code very well.  But it has a lot
 To use it:
 1. clone to your local.  Move to the parent directory where you want the template to be located and type: `git clone git@github.com:YizYah/basicNsFrontTemplate.git`.
 2. install ns-flip globally: `npm i ns-flip`
-3. Contact [NoStack](www.nostack.net) for a free trial licence by emailing info atsign nostack dot net.
+3. Contact [NoStack](www.nostack.net) for a free trial license by emailing info atsign nostack dot net.
 4. Follow the instructions at [ns-flip CLI](https://www.npmjs.com/package/ns-flip) for creating the app using the template.
 5. copy over `sample.app.yml` into your `meta` directory as `app.yml`.  It's just for a simple todo list.  You can then modify it to create whatever you want.
 
